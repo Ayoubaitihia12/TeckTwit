@@ -1,13 +1,13 @@
 <template>
-    <div class="flex items-start space-x-4">
+    <div class="flex items-start bg-white rounded-lg p-4 ring-1 ring-inset ring-gray-300  space-x-4">
       <div class="flex-shrink-0">
         <img class="inline-block h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
       </div>
       <div class="min-w-0 flex-1">
         <form action="#" class="relative">
-          <div class="overflow-hidden rounded-lg shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-indigo-600">
-            <label for="comment" class="sr-only">Add your comment</label>
-            <textarea rows="3" name="comment" id="comment" class="block w-full resize-none border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6" placeholder="Add your comment..." />
+          <div class="overflow-hidden">
+            <label for="comment" class="sr-only">Write some think ...</label>
+            <textarea rows="2" name="comment" id="comment" class="block w-full resize-none outline-none border-0 bg-transparent px-3 py-2 text-gray-900 placeholder:text-gray-400 sm:text-sm/6" placeholder="Write some think ..." />
   
             <!-- Spacer element to match the height of the toolbar -->
             <div class="py-2" aria-hidden="true">
@@ -64,7 +64,7 @@
               </div>
             </div>
             <div class="flex-shrink-0">
-              <button type="submit" class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Post</button>
+              <button type="submit" class="inline-flex items-center rounded-full bg-blue-400 px-5 py-1.5 text-sm font-semibold text-white shadow-smfocus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Post</button>
             </div>
           </div>
         </form>

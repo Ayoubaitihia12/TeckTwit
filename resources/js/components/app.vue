@@ -16,8 +16,8 @@
         </div>
       </header>
   
-      <div class="mx-auto flex border -400 w-full max-w-7xl items-start gap-x-8 px-2 py-6 sm:px-6 lg:px-4">
-        <aside class="sticky border border-red-400 top-8 hidden w-44 shrink-0 lg:block">
+      <div class="mx-auto bg-gray-50 flex border-r border-white w-full max-w-7xl items-start gap-x-8 px-6 py-6 sm:px-6 lg:px-8">
+        <aside class="sticky top-8 hidden w-44 shrink-0 lg:block">
           <!-- Left column area -->
 
             <nav class="flex flex-1 flex-col border">
@@ -50,7 +50,7 @@
             <router-view/>
         </main>
   
-        <aside class="sticky top-8 hidden w-96 shrink-0 xl:block">
+        <aside class="sticky top-8 hidden w-80 shrink-0 xl:block">
           <!-- Right column area -->
             <profileCard/>
         </aside>
