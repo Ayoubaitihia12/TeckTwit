@@ -6,13 +6,15 @@
           <div class="flex items-center gap-x-8">
             <button type="button" class="-m-2.5 p-2.5 text-gray-400 hover:text-gray-300">
               <span class="sr-only">View notifications</span>
-              <!-- <BellIcon class="h-6 w-6" aria-hidden="true" /> -->
+              <BellIcon class="h-6 w-6" aria-hidden="true" />
             </button>
+            <notifications_list/>
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">Your profile</span>
               <img class="h-8 w-8 rounded-full bg-gray-800" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
             </a>
           </div>
+          
         </div>
       </header>
   
@@ -20,7 +22,7 @@
         <aside class="sticky top-8 hidden w-44 shrink-0 lg:block">
           <!-- Left column area -->
 
-            <nav class="flex flex-1 flex-col border">
+            <nav class="flex border flex-1 rounded-lg bg-white shadow flex-col">
                 <ul role="list" class="flex flex-1 flex-col gap-y-7">
                     <li>
                     <ul role="list" class="-mx-2 space-y-1">
@@ -59,9 +61,10 @@
   </template>
   
 <script setup>
-//   import { BellIcon } from '@heroicons/vue/24/outline'
+  import { BellIcon } from '@heroicons/vue/24/outline'
 
     import profileCard from '../elements/profileCard.vue'
+    import notifications_list from '../elements/notifications-list.vue'
 
     const teams = [
         { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },

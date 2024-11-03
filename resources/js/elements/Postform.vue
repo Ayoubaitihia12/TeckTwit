@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-start bg-white rounded-lg p-4 ring-1 ring-inset ring-gray-300  space-x-4">
+    <div class="flex items-start bg-white shadow border rounded-lg p-4 space-x-4">
       <div class="flex-shrink-0">
         <img class="inline-block h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
       </div>
@@ -7,7 +7,7 @@
         <form action="#" class="relative">
           <div class="overflow-hidden">
             <label for="comment" class="sr-only">Write some think ...</label>
-            <textarea rows="2" name="comment" id="comment" class="block w-full resize-none outline-none border-0 bg-transparent px-3 py-2 text-gray-900 placeholder:text-gray-400 sm:text-sm/6" placeholder="Write some think ..." />
+            <textarea rows="1" name="comment" id="comment" class="block w-full resize-none outline-none border-0 bg-transparent px-3 py-2 text-gray-900 placeholder:text-gray-400 sm:text-sm/6" placeholder="Write some think ..." />
   
             <!-- Spacer element to match the height of the toolbar -->
             <div class="py-2" aria-hidden="true">
