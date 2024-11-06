@@ -1,9 +1,14 @@
 <template>
     <Popover class="relative">
+      
       <PopoverButton class="inline-flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
+
+        <div class="bg-red-500 flex items-center justify-center absolute -top-1 -right-0.5 w-4 h-4 rounded-full">
+          <span class="text-xs">4</span>
+        </div>
         <!-- <span>Solutions</span>
         <ChevronDownIcon class="h-5 w-5" aria-hidden="true" /> -->
-        <!-- <span class="sr-only">View notifications</span> -->
+        <span class="sr-only">View notifications</span>
         <BellIcon class="h-6 w-6" aria-hidden="true" />
       </PopoverButton>
   
@@ -46,6 +51,7 @@
     CursorArrowRaysIcon,
     FingerPrintIcon,
     SquaresPlusIcon,
+    BellIcon
   } from '@heroicons/vue/24/outline'
   
   const solutions = [
