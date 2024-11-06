@@ -73,26 +73,53 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue'
-  import {
-    FaceFrownIcon,
-    FaceSmileIcon,
-    FireIcon,
-    HandThumbUpIcon,
-    HeartIcon,
-    PaperClipIcon,
-    XMarkIcon,
-  } from '@heroicons/vue/20/solid'
-  import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from '@headlessui/vue'
-  
-  const moods = [
-    { name: 'Excited', value: 'excited', icon: FireIcon, iconColor: 'text-white', bgColor: 'bg-red-500' },
-    { name: 'Loved', value: 'loved', icon: HeartIcon, iconColor: 'text-white', bgColor: 'bg-pink-400' },
-    { name: 'Happy', value: 'happy', icon: FaceSmileIcon, iconColor: 'text-white', bgColor: 'bg-green-400' },
-    { name: 'Sad', value: 'sad', icon: FaceFrownIcon, iconColor: 'text-white', bgColor: 'bg-yellow-400' },
-    { name: 'Thumbsy', value: 'thumbsy', icon: HandThumbUpIcon, iconColor: 'text-white', bgColor: 'bg-blue-500' },
-    { name: 'I feel nothing', value: null, icon: XMarkIcon, iconColor: 'text-gray-400', bgColor: 'bg-transparent' },
-  ]
-  
-  const selected = ref(moods[5])
+    import { ref } from 'vue'
+    import {
+      FaceFrownIcon,
+      FaceSmileIcon,
+      FireIcon,
+      HandThumbUpIcon,
+      HeartIcon,
+      PaperClipIcon,
+      XMarkIcon,
+    } from '@heroicons/vue/20/solid'
+    import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from '@headlessui/vue'
+    
+    const moods = [
+      { name: 'Excited', value: 'excited', icon: FireIcon, iconColor: 'text-white', bgColor: 'bg-red-500' },
+      { name: 'Loved', value: 'loved', icon: HeartIcon, iconColor: 'text-white', bgColor: 'bg-pink-400' },
+      { name: 'Happy', value: 'happy', icon: FaceSmileIcon, iconColor: 'text-white', bgColor: 'bg-green-400' },
+      { name: 'Sad', value: 'sad', icon: FaceFrownIcon, iconColor: 'text-white', bgColor: 'bg-yellow-400' },
+      { name: 'Thumbsy', value: 'thumbsy', icon: HandThumbUpIcon, iconColor: 'text-white', bgColor: 'bg-blue-500' },
+      { name: 'I feel nothing', value: null, icon: XMarkIcon, iconColor: 'text-gray-400', bgColor: 'bg-transparent' },
+    ]
+    
+    const selected = ref(moods[5])
+
+
+
+    // Form
+
+    import axios from 'axios';
+
+    const content = ref('');
+
+    const submitPost = async () => {
+    
+    
+    try {
+      await axios.post('/api/posts', {
+        content: content.value,
+        mood: selected.value ? selected.value.name : null,
+      });
+      content.value = '';
+      selected.value = null;
+      alert('Post submitted successfully');
+    } catch (error) {
+      console.error(error);
+      alert('Failed to submit post');
+    }
+  }
+
+
   </script>
