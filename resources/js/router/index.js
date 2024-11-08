@@ -1,7 +1,7 @@
 import { createRouter , createWebHistory } from "vue-router";
 
 import home from '../components/home.vue'
-
+import profile from '../components/profile.vue'
 
 
 
@@ -9,6 +9,10 @@ const routes = [
     {
         path : '/',
         component: home,
+    },
+    {
+        path : '/profile',
+        component: profile,
     }
 ]
 

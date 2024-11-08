@@ -20,24 +20,14 @@
           <!-- Left column area -->
 
             <nav class="flex border flex-1 rounded-lg bg-white shadow flex-col">
-                <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                <ul role="list" class="flex flex-1 flex-col gap-y-7">  
                     <li>
-                    <ul role="list" class="-mx-2 space-y-1">
-                        <li v-for="item in navigation" :key="item.name">
-                        <a :href="item.href" :class="[item.current ? 'bg-gray-50 text-indigo-600' : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600', 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold']">
-                            <component :is="item.icon" :class="[item.current ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600', 'h-6 w-6 shrink-0']" aria-hidden="true" />
-                            {{ item.name }}
-                        </a>
-                        </li>
-                    </ul>
-                    </li>
-                    <li>
-                    <ul role="list" class="-mx-2 mt-2 space-y-1">
+                    <ul role="list" class="-mx-2 mt-2 px-2 space-y-1">
                         <li v-for="team in teams" :key="team.name">
-                        <a :href="team.href" :class="[team.current ? 'bg-gray-50 text-indigo-600' : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600', 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold']">
-                            <span :class="[team.current ? 'border-indigo-600 text-indigo-600' : 'border-gray-200 text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600', 'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium']">{{ team.initial }}</span>
+                        <router-link :to="team.href" :class="[team.current ? 'text-blue-500' : 'text-gray-700 hover:text-blue-500', 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold']">
+                            <span :class="[team.current ? 'border-indigo-600 text-blue-500' : 'text-gray-400 group-hover:border-indigo-600 group-hover:text-blue-500', 'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium']">{{ team.initial }}</span>
                             <span class="truncate">{{ team.name }}</span>
-                        </a>
+                        </router-link>
                         </li>
                     </ul>
                     </li>
@@ -66,8 +56,9 @@
     import profile_dropdown from '../elements/profile-dropdown.vue'
 
     const teams = [
-        { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
-        { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
-        { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
+        { id: 1, name: 'Home', href: '#', initial: 'H', current: false },
+        { id: 2, name: 'Messages', href: '#', initial: 'T', current: false },
+        { id: 3, name: 'Profile', href: '/profile', initial: 'W', current: false },
+        { id: 3, name: 'Saved', href: '#', initial: 'W', current: false },
     ]
 </script>
