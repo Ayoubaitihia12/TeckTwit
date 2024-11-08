@@ -4,10 +4,10 @@
         <img class="inline-block h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
       </div>
       <div class="min-w-0 flex-1">
-        <form method="post"action="" class="relative">
+        <form @submit.prevent="submitPost" method="post" action="" class="relative">
           <div class="overflow-hidden">
             <label for="content" class="sr-only">Write some think ...</label>
-            <textarea rows="1" name="content" id="content" class="block w-full resize-none outline-none border-0 bg-transparent px-3 py-2 text-gray-900 placeholder:text-gray-400 sm:text-sm/6" placeholder="Write some think ..." />
+            <textarea v-model="content" rows="1" name="content" id="content" class="block w-full resize-none outline-none border-0 bg-transparent px-3 py-2 text-gray-900 placeholder:text-gray-400 sm:text-sm/6" placeholder="Write some think ..." />
   
             <!-- Spacer element to match the height of the toolbar -->
             <div class="py-2" aria-hidden="true">
@@ -74,6 +74,7 @@
   
   <script setup>
     import { ref } from 'vue'
+
     import {
       FaceFrownIcon,
       FaceSmileIcon,
@@ -102,24 +103,21 @@
 
     import axios from 'axios';
 
-    const content = ref('');
+    const formData = ref({
+      content: 'hello',
+    });
 
-    const submitPost = async () => {
-    
-    
-    try {
-      await axios.post('/api/posts', {
-        content: content.value,
-        mood: selected.value ? selected.value.name : null,
+
+    const submitPost = () =>{
+      axios.post('/api/posts',formData.value)
+      .then(response =>{
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error('Error:', error.response ? error.response.data : error.message); 
       });
-      content.value = '';
-      selected.value = null;
-      alert('Post submitted successfully');
-    } catch (error) {
-      console.error(error);
-      alert('Failed to submit post');
     }
-  }
+
 
 
   </script>
