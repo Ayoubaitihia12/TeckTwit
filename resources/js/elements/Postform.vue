@@ -103,8 +103,9 @@
 
     import axios from 'axios';
 
+
     const formData = ref({
-      content: 'hello',
+      content: '',
     });
 
 
@@ -117,6 +118,7 @@
         console.error('Error:', error.response ? error.response.data : error.message); 
       });
     }
+
 
 
 

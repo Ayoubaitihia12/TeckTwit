@@ -42,8 +42,9 @@
         </div>
 
         <div>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-            Temporibus sit molestiae voluptatibus?</p>
+            <p>
+                {{ post.content }}
+            </p>
 
             <img
             class="w-full mt-4 max-h-[300px] object-cover rounded-xl overflow-hidden"
@@ -61,6 +62,14 @@
   
   <script setup>
   import { ref } from 'vue'
+
+
+    defineProps({
+        post: {
+            type: Array,
+            required: true // Indicates that the prop must be passed
+        }
+    });
 
   import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 
@@ -85,4 +94,7 @@
   ]
   
   const selected = ref(moods[5])
+
+
+   
   </script>
